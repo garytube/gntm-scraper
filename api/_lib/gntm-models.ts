@@ -2,7 +2,7 @@ import { DOMParser } from 'https://deno.land/x/deno_dom/deno-dom-wasm.ts';
 import { Candidates, List } from './gntm-models.d.ts';
 const source = 'https://www.prosieben.de/tv/germanys-next-topmodel/models';
 
-async function getModels() {
+async function getModels(): Promise<List[]> {
 	const res = await fetch(source);
 
 	const html = await res.text();
